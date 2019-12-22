@@ -34,6 +34,8 @@ input[type=color], input[type=date], input[type=datetime-local], input[type=date
 	border-radius: 0 !important;
 	font-size: 16px;
 }
+
+#employees-table textarea {width:90%; height:120px;}
 </style>
 <table cellpadding="0" cellspacing="0" width="100%" id="employees-table">
   <tbody>
@@ -45,17 +47,25 @@ input[type=color], input[type=date], input[type=datetime-local], input[type=date
     </tr>
     <tr>
       <td width="20%"><label for="aur-employee-firstname" style="font-weight:bold;"><?php echo __( "First Name: ", "aur-ims" ); ?></label></td>
-      <td width="80%"><input class="aur_textbox" type="text" name="aur-employee-firstname" id="aur-employee-firstname" value="<?php echo __( get_post_meta( $object->ID, 'aur-employee-firstname', true ) ); ?>" style="width:50%;" /></td>
+      <td width="80%"><input class="aur_textbox" type="text" name="aur-employee-firstname" id="aur-employee-firstname" value="<?php echo __( get_post_meta( $object->ID, 'aur-employee-firstname', true ) ); ?>" style="width:50%; text-transform:uppercase;" /></td>
     </tr>
     <tr>
       <td width="20%"><label for="aur-employee-lastname" style="font-weight:bold;"><?php echo __( "Last Name: ", "aur-ims" ); ?></label></td>
-      <td width="80%"><input class="aur_textbox" type="text" name="aur-employee-lastname" id="aur-employee-lastname" value="<?php echo __( get_post_meta( $object->ID, 'aur-employee-lastname', true ) ); ?>" style="width:50%;" /></td>
+      <td width="80%"><input class="aur_textbox" type="text" name="aur-employee-lastname" id="aur-employee-lastname" value="<?php echo __( get_post_meta( $object->ID, 'aur-employee-lastname', true ) ); ?>" style="width:50%; text-transform:uppercase;" /></td>
     </tr>
+    
     <tr>
-      <td width="20%"><label for="aur-employee-salary" style="font-weight:bold;"><?php echo __( "Salary: ", "mogreatdane" ); ?></label></td>
-      <td width="80%">$
-        <input class="aur_textbox" type="number" name="aur-employee-salary" id="aur-employee-salary" value="<?php echo __( get_post_meta( $object->ID, 'aur-employee-salary', true ) ); ?>" style="width:49%;" /></td>
+      <td width="20%"><label for="aur-employee-salary" style="font-weight:bold;"><?php echo __( "Salary: ", "aur-ims" ); ?></label></td>
+      <td width="80%"><span style="margin-left:-11px;">$</span>
+        <input class="aur_textbox" type="number" name="aur-employee-salary" id="aur-employee-salary" value="<?php echo __( get_post_meta( $object->ID, 'aur-employee-salary', true ) ); ?>" style="width:15%; text-align:center;" /></td>
     </tr>
+    
+    <tr>
+      <td width="20%"><label for="aur-employee-address" style="font-weight:bold; vertical-align:top;"><?php echo __( "Address: ", "aur-ims" ); ?></label></td>
+      <td width="80%"><textarea class="aur_textbox" name="aur-employee-address" id="aur-employee-address"><?php echo __( get_post_meta( $object->ID, 'aur-employee-address', true ) ); ?></textarea></td>
+    </tr>
+    
+    
     <!--<tr>
       <td width="20%"><label for="aur-trailer-url" style="font-weight:bold;"><?php//echo __( "Trailer URL: ", "mogreatdane" ); ?></label></td>
       <td width="80%"><input class="aur_textbox" type="number" name="aur-trailer-url" id="aur-trailer-url" value="<?php//echo __( get_post_meta( $object->ID, 'aur-trailer-url', true ) ); ?>" style="width:100%;" /></td>
