@@ -25,13 +25,16 @@ along with An Institute Management Solution. If not, see {License URI}.
 define( 'PLUGIN_DIR', dirname(__FILE__).'/' ); 
 require_once(PLUGIN_DIR . "inc/post_types/courses.php");
 require_once(PLUGIN_DIR . "inc/post_types/employees.php");
+require_once(PLUGIN_DIR . "inc/post_types/general-taxonomies.php");
 
 
 function aurims_run_init() {
 	
-	register_courses();
-	register_employees();
-	//flush_rewrite_rules();
+	aur_register_courses();
+	//aur_register_employees();
+	aur_register_taxonomies();
+	
+	flush_rewrite_rules();
 	
 	if( get_page_by_title( 'Team' ) == NULL ) {
 		$createPage = array(

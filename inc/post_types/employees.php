@@ -1,7 +1,7 @@
 <?php
 
-if( !function_exists("register_employees")) {
-	function register_employees() {
+if( !function_exists("aur_register_employees")) {
+	function aur_register_employees() {
 		//	Labels for Custom Post Type EMPLOYEES
 		$labels = array(
 			'name'                => _x( 'Employees', 'Post Type General Name', 'aur-ims' ),
@@ -48,5 +48,7 @@ if( !function_exists("register_employees")) {
 		);
 		
 		register_post_type( 'employees', $args );
+		include_once(dirname(__FILE__).'/employees-taxonomy.php');
+		aur_register_employees_taxonomy();
 	}
 }

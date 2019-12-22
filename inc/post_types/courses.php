@@ -1,7 +1,7 @@
 <?php
 
-if( !function_exists("register_courses")) {
-	function register_courses() {
+if( !function_exists("aur_register_courses")) {
+	function aur_register_courses() {
 		//	Labels for Custom Post Type COURSES
 		$labels = array(
 			'name'                => _x( 'Courses', 'Post Type General Name', 'aur-ims' ),
