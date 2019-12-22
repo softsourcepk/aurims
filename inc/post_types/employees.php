@@ -25,7 +25,7 @@ if( !function_exists("aur_register_employees")) {
 			'description'         => __( 'Employees of the team', 'aur-ims' ),
 			'labels'              => $labels,
 			// Features this CPT supports in Post Editor
-			'supports'            => ['title', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields',],
+			'supports'            => ['title', 'author', 'thumbnail', 'revisions'],
 			// You can associate this CPT with a taxonomy or custom taxonomy. 
 			'taxonomies'          => [ 'genres' ],
 			/* A hierarchical CPT is like Pages and can have
@@ -48,7 +48,11 @@ if( !function_exists("aur_register_employees")) {
 		);
 		
 		register_post_type( 'employees', $args );
+
 		include_once(dirname(__FILE__).'/employees-taxonomy.php');
+		include_once(dirname(__FILE__).'/employees-custom-fields.php');
+
 		aur_register_employees_taxonomy();
+		aur_register_employees_cfs();		
 	}
 }
